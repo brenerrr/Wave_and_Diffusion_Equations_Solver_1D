@@ -12,12 +12,12 @@ switch TimeMarchingSchemeIdentifier
         uNext = u + dt * RHS(u, SizeU, dx, Velocity, Viscosity, ...
                               RHSIdentifier, DifferentiationSchemeIdentifier);
     case 'rk2'    
-        Stage1 = u + dt * RHS(u, SizeU, dx, Velocity, Viscosity, ...
-                                 RHSIdentifier, DifferentiationSchemeIdentifier);
-        
-        uNext = u + 0.5*dt * RHS(Stage1, SizeU, dx, Velocity, Viscosity, ...
-                             RHSIdentifier, DifferentiationSchemeIdentifier);        
-     
+       Stage1 = u + dt * RHS(u, SizeU, dx, Velocity, Viscosity, ...
+                                RHSIdentifier, DifferentiationSchemeIdentifier);
+       
+       uNext = 0.5 * (u + Stage1 + dt * RHS(Stage1, SizeU, dx, Velocity, Viscosity, ...
+                            RHSIdentifier, DifferentiationSchemeIdentifier) );        
+    
     case 'rk4'
         
        % ************************************************ 

@@ -26,12 +26,12 @@ Inputs.CFL = 0.1;
 Inputs.CFLViscous = 0.1;
 
 % Parameter that increases steepness of initial condition
-Inputs.k = 5;
+Inputs.k = 1;
 
 Inputs.InitialConditionIdentifier = 'gaussian';      % gaussian, sine, step
 Inputs.TimeMarchingSchemeIdentifier = 'euler';         % euler, rk2
 Inputs.RHSIdentifier = 'wave';                  % wave, diffusion
-Inputs.DifferentiationSchemeIdentifier = 'backwards'; % centered, backwards
+Inputs.DifferentiationSchemeIdentifier = 'centered'; % centered, backwards
 %% Pre solver  
 
 % Calculate grid points, allocate array for solver's output and calculate
