@@ -28,7 +28,7 @@ Inputs.CFLViscous = 0.1;
 % Parameter that increases steepness of initial condition
 Inputs.k = 1;
 
-Inputs.InitialConditionIdentifier = 'gaussian';      % gaussian, sine, step
+Inputs.InitialConditionIdentifier = 'sine';      % gaussian, sine, step
 Inputs.TimeMarchingSchemeIdentifier = 'euler';         % euler, rk2
 Inputs.RHSIdentifier = 'wave';                  % wave, diffusion
 Inputs.DifferentiationSchemeIdentifier = 'centered'; % centered, backwards
@@ -76,7 +76,7 @@ for i = 1:nPlot
    ylabel('u') ; xlabel('x');                 % Labels of y and x axis 
    set(gcf, 'Position',  [100, 20, 700, 700]) % Increase size of window
    xlim([Inputs.x0, Inputs.xn])               % Limits of x axis
-   ylim([-min(u(:,1)), max(u(:,1))]);                         % Limits of y axis                          
+   ylim([min(u(:,1)), max(u(:,1))]);          % Limits of y axis                          
    grid()                                     % Create a background grid
    
 end
